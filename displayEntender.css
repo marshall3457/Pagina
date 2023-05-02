@@ -1,0 +1,12 @@
+.cuadrado{
+    display: inline-block;   /* Con la propiedad inline alparecer ignora todo menos el color
+    pero cuando se trata de manipular el espacio como el padding lo ignora tambien ocn widht y height */
+    
+    /* A cambio con la propiedad inline-block se pone el linea y si permite las modificacion de las 
+    propiedades como widht, height, padding y margin y todas aquellas que modifiquen tambien el espacio */
+    width: 200px;
+    height: 200px;
+    background: #aaa;
+    margin-bottom: 20px;
+    padding: 20px;
+}

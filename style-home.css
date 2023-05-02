@@ -1,0 +1,53 @@
+
+/* todo lo que es alteracion visual esta aqui */
+.titulo-principal{
+    padding-left: 30px;
+}
+#banner{
+    width: 100%;
+}
+
+.principal{
+    background: #CCCCCC;
+    padding: 20px;
+}
+
+.titulo-centralizado{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+/* me estoy referenciando a la etiqueta em dentro del strong */
+em strong{
+    color: red;
+}
+
+#mision{
+    font-size: 20px;
+}
+
+.diferenciales{
+    /* darle color al fondo */
+    background: #FFFFFF;
+    padding: 30px;
+}
+/* para referenciarnos a las clases */
+
+
+.items{
+    font-style: italic;
+}
+
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%; /* Si es el ancho, solo que se aplica y despues viene el margin que aplica un 15% al exterior del bloque*/
+    margin-right: 15% ; /* Crea el espacio como si fuera una margen en pocas palabras */
+}
+
+.imagenDiferenciales{
+    width: 50%;
+}

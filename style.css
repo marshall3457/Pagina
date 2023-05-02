@@ -1,0 +1,554 @@
+/* widht: calc(40% - (26px * 4)) esto de calc sirve para que haga un calculo y nos de el resultado, 
+principalmente se utiliza en imagenes para que no halla distorcion en diferentes dispositivos
+con diferentes pantallas, en este caso se lo estamos asignado al widht para que tome el (40% de la pagina
+- 26px * 4) */
+
+body{ /* Va a aplicar al cuerpo de toda la pagina el cambio de letra */
+    font-family: 'Montserrat', sans-serif; /* Esto nos ayuda a que la fuente que elegimos se pueda ver en todos los sistemas operativos como iphone, window y linux atravez de cualquier tambien navegador
+    los siguientes beneficios de usar fuentes externas:
+
+    1. Estandarizar nuestro contenido en todos los navegadores
+    2. Dejar el sitio más bonito, fuera de lo común
+    3. Tener más alternativas de fuentes
+    */
+}
+
+header{
+    background-color: #BBBBBB;
+    padding: 20px 0; /* 0 en los laterales */
+}
+.caja{
+    width: 940px;
+    position: relative;   /* relative respecto al posicionamiento del abosolute del la etiqueta nav, asi
+    permite moverlo en widht si que se posiciones por ejemplo en la posicion 940px de la pagina */
+    margin: 0 auto; /* 0 para arriba y abajo y el auto para que el navegador calcule y vea cual
+    es el margen que debe dejar respecto a la resolucion de pantalla del usuario */
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+nav li{
+    display: inline-block;
+    margin: 0 0 0 15px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold; /* sirve para alterar el peso de la fuente, osea aumentarla y con el valor bold se pone en negrita */
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover{ /*hover sirve para capturar el movimiento del mouse del usuario  */
+    color: #c78c19;  /* En pocas palabras le estamos diciendo que cuando cacte el movimiento encima de los links que seria la etiqueta a, que se cambie de color */
+    text-decoration: underline;  /* Le colocamos el subrayado */
+}
+
+.productos{
+    width: 940px;
+    margin: 0 auto; /* Que cree un margen nomas pero respecto a los bordes de izq y der y lo que sobre de la pantalla del usuario */
+    padding: 50px;  /* Cuandp declarp el padding estoy dandole mas espacio interno y esto a su vez hace crecer todo el contenido(bloque) */
+    /* para replanzar la propiedad display */
+
+}
+
+.productos li{
+    /* Por ejemplo "display: inline" me pone los elemento uno despues del otro pero no me permite modificar sus propiedades porque no es un bloque */
+    display: inline-block;   /* Pudiendo ajustar el tamaño de su contenido, dejándolo regulable. A diferencia del inline solo pues este no te permite modificar las propiedades */
+    /* Si quiero que se pogan en linea los elementos y siga siendo teniendo como propiedad bloque utilizo este valor de la propiedad */
+    text-align: center;
+    width: 30%; /* Le da 30% de anchura a cada uno y en total seria 90% y el 10% restante lo reparte en los espacios */
+    vertical-align: top;  /* Alinea verticalmente el contenido hacia arriba para que estas queden rectas respecto al elemento de arriba */
+    margin: 0 1.5%;
+    padding: 30px 20px;  /* expaciamiento interno */
+    box-sizing: border-box; /* Si esto el contenido se deborda por el padding de arriba, por eso utiliza el widht 30% para no desbodarse  */
+    border: 2px solid #000000; 
+    border-radius: 10px; /* Van a  en orden sentido del reloj. */
+}
+
+.productos li:hover{ /* Capturamos el movimiento que del mouse, si pasa encima de alguna etiqueta li que seria los bloques que tenemos ejecutara el codigo dentro de este bloque de codigo */
+    border-color: #c78c19; /* Nomas los bordes */
+}
+/* Esto capturadores de eventos solo permiten modificar los estilos */
+.productos li:active{ /* Cuando el click del mouse izquierdo este activo ejecutara el codigo dentro del bloque de codigo */
+    border-color: #088c19;
+}
+.productos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos li:hover h2{/* Cuando se posiciones encima del li le aplicara al h2 lo que habra dentro de este bloque de codigo*/
+    font-size: 33px;
+}
+
+.producto-descripcion{
+    font-size: 18px;
+}
+
+.producto-precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;  /* margen hacia arriba */
+}
+
+/* Absolute sirve para definir el punto inicial donde comienza */
+/* En cambio relative sirve pero para moverlo respecto a su punto inicial que esta fijo */
+
+footer{
+    text-align: center;
+    background: url(imagenes/bg.jpg); /* El background hace que se ocupe 100 de la pagina, repitiendo la imagen */
+    padding: 40px;
+}
+
+.copyright{
+    color: #FFFFFF;
+    font-size: 13px; /* disminuimos un poco el tamano del texto */
+    margin: 20px;
+}
+
+
+form{
+    margin: 40px 0; /* Margen para separar 40px para arriba y para abajo y 0px para los laterales 
+    para todo el form en este caso para separarlo del encanbezado y footer */
+}
+form label, form legend{ /* Qué label e input por padrón posee el display inline */
+    /* Aqui nos podemos referir a varios elemento para modificar su estilo, se hace con coma para cada elemento a modificar */
+    display: block; /* Para que los nombres de los input tambien esten en formato vertical ocupando el 100% del ancho */
+    font-size: 20px;
+    margin: 0 0 10px; /* 0 para arriba(top) 0 para la derecha y 10px para la parte inferior(bottom) */
+}
+
+.input-padron{/* Cambiamos a clase para no interferir con los futuros inputs */ 
+    /* Qué label e input por padrón posee el display inline */
+    display: block; /* Para que el input este en formato vertical ocupando el 100% del ancho gracias a la propiedad block */
+    margin: 0 0 20px;
+    padding: 10px 25px; /* Sirve para darle mas espacio interior al input en este caso seria 10px para
+    inferior y superior y 25px para los costados(lados)*/
+    /* La propiedad padding sirve para cambiar el espaciado interno, entre el contenido y el borde */
+    width: 50%;
+    /* Con esto definimos el ancho de nuestro input, en este caso queremos que ocupe el 50% de los 940px
+    definimos en el main */
+}
+.checkbox{
+    margin: 20px 0; /* Le damos mas espacio hacia arriba y abajo al checkbox entre el submit y 
+    los marcadores */
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    /* Modificamos las letras que estan dentro del boton acontinuacion: */
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    border: none; /* Para quitarle el borde */
+    border-radius: 5px;
+    transition: 1s all; /* Esto permite que la transcion cuando captura el hover el movimiento del mouse 
+    encima del elemento sea mas lenta(en este caso le decimos que se dimore 1s en la trascicion)
+    y aparte nos referimos a que es al background el cambio para que se haga mas lento */
+    /* Utilizamos la propiedad transition para proporcionar una transición visual de un elemento. */
+    /* Tambien podemos poner all para que aplique a todos los elementos dentro */
+    cursor: pointer; /* Cambiamos el curso al pointer que seria la manita que esta apuntando */
+}
+
+/* denuevo llamamos a la clase pero ahora con el hover para que capture los 
+movimientos de mouse y realize una accion cuando el mouse esta encima */
+.enviar:hover{ 
+    background: darkorange;
+    transform: scale(1.2); /* para ejecutar dos parametros hay que pasarselo en la
+    misma linea */
+    /* Con la propiedad transform la utilizamos para transformar el elemento en algo diferente por ejemplo aqui
+    estamos aumentando la escala a 1.2 cuando el mouse se posiciones encima de la clase enviar */
+    /* Utilizamos la propiedad transform: scale() para aumentar un elemento proporcionalmente*/   
+    /* transform: rotate(70deg);*/  
+    /*transform: rotate(70deg);*/
+    /* tambien lo tenemos con la funcion rotate que hace que el elemento gire, como parametro hay que 
+    pasarle grados en este caso se le paso "70deg" */
+    /* si ponemos dos propiedades transform esta se va por la ultima */
+}
+
+table{ /* Damos un espacio exterior a toda la tabla */
+    margin: 40px 40px;
+}
+
+thead{ /* Modificamos el encabezado llamando a su respectiva etiqueta */
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td , th{ /* aplicamos todos estos estilos a la celdas del encabezado y la celdas del body */
+    border: 1px solid #000000;
+    padding: 8px 15px;
+
+}
+
+/*Aquie inicia el CSS para nuestra home */
+
+.banner{
+    width: 100%;
+}
+
+/* img + p{
+    Selector +, para acceder al primer hermano de determinado elemento. 
+    Por ejemplo, para acceder el primer p después de una img
+
+    Como estan en el mismo nivel le puedo decir que me seleccione el primer parrafo que viene despues de la imagen
+    
+    background: yellow;
+}
+
+img ~ p{
+    Selector ~, para acceder a todos los hermanos de determinado elemento.
+    Por ejemplo, para acceder todos los p después de una img.
+    
+    Aqui le estamos diciendo que me eliga a todos los parrafos que vienen despues de la imagen 
+    Esta instruccion sobreescribe la anterior, ya que elige al primer parrafo tambien 
+    
+    background: green;
+}
+
+.principal p:not(#mision){
+    Selector not, para acceder a los elementos, excepto algunos. Por ejemplo,
+    para acceder a todos los p dentro de main excepto el p que tiene id missao.
+
+    Aqui le decimo que me aplique a todos menos(propiedad "not") al parrafo que tiene como identificador id #mision 
+    
+    background: orange;
+}
+main > p{
+    Selector > , para acceder a los hijos de determinado elemento. 
+    Por ejemplo, para acceder todos los p dentro del main.
+
+    Con el ">" le estamos diciendo que solo eliga los p que son hijos del main 
+    elemento > hijo 
+    
+    background: red;
+} */
+
+.principal{
+    padding: 3em 0; /* Esta muy pegado al banner por eso el padding para separarlo */
+    background: #FEFEFE;
+    width: 940px; 
+    margin: 0 auto;
+    /* Se cambia esto del main a aqui para centralizarlo y que el background aplique el 100% de la pagina */ 
+    /* Simpre se utiliza esta tecnica para centralizar algo ya que las pantallas
+    padron(por defecto) vienen de 1280px de ancho */
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em; /* Al colocar 2em, esto hace referencia a que se va a colocar 2 veces el tamano por 
+    predeterminado, que en este caso el tamano predeterminado de este navegador seria 15px entonces
+    con el 2em seria 30px, cabe recalcar que el tamano predeterminado puede variar segun el navegador */
+    margin:  0 0 1em; /* 0 para arriba, 0 para la izq y 1em para bajo que seria 1 vez el tamano 
+    predeterminado de las letras en el navegador en este caso 15px */
+    clear: left; 
+    /* Cualquier configuracion despues de titulo que me limpie la derecha para eso sirve la propiedad clear: left,
+    es este caso lo utilizamos aqui para que solo aplique la propiedad float al texto y no a los titulos ni lo que sigue */
+    
+    /*color: rgb(0,0,0);
+    La funcion rgb que significa red, green y blue hace que podamos elegir un color con los parametros que le pasemos
+    por ejemplo el negro seria el 0,0,0 */ 
+
+    /* color: rgba(218, 0, 0, 0.3); */  
+    /* con la funcion rgba pasa lo mismo solo que se le puede pasar un cuarto 
+    parametro que seria el nivel de opacidad  */
+
+    /* color: rgb(218, 0, 0);  */
+    /* si le quito el cuarto parametro y el rgba a rgb pues obtenemos el color completo sin opacidad  */
+
+
+    /* text-shadow: 2px 2px 10px red; */  
+    /* utilizamos la propiedad text-shadow para aplicar sombreado al texto se les pasa practicamente los mismo parametros que la
+    propiedad text-shadow*/
+}
+
+/*
+.titulo-principal:first-letter{
+    Con este pseudo-elemento con el valor de first letter(primera letra) estamos eligiendo la primera letra de los titulos principales
+    
+    font-weight: bold;
+    En este caso esta pintando en negrilla la primera letra de todos los titulos, en este caso como la primera letra es [ entonces
+    se lo aplicara
+}
+
+.titulo-principal:before{
+    Con este pseudo-elemento con el valor de before(antes) estamos poniendo un elemento antes del titulo principal y en este caso es el [
+    
+    content: "[";
+    /*con content podemos colocar un elemento en la pagina
+}
+
+.titulo-principal:after{
+    Con este pseudo-elemento con el valor de after(despues) estamos poniendo un elemento despues de nuestro titulo principal y en este caso es el ]
+
+    content: "]";
+
+}
+
+
+p::first-line{
+    Con esto elegimos la primera linea de cada etiqueta p osea de cada parrafo
+   
+    font-style: italic;
+}
+
+*/
+.principal p{
+    /* Llamamos a la clase principal y elegimos solo la etiqueta p a modificar */
+    margin: 0 0 1em; /* 0 para arriba, 0 para la izq y el 1em es el espacio seria el tamano '
+    predeterminado de las letras en el navegador multiplicado 1 vez osea daria 15px en total */
+}
+
+.principal strong{
+    font-weight: bold;
+
+}
+
+.principal em{
+    font-style: italic; /* Estilo de la fuente de las letras en este caso seria italico */
+}
+
+.utensilios{
+    width: 120px;
+    float: left; 
+    /* usar para que nuestros elementos floten sobre el lado que se indica.
+    En pocas palabras sirve para posicionar un elemento alrededor de este que recibe la propiedad float
+    Tanto el float:left como el float: right sirven para que el elemento se destaque en la pantalla, la superficie del elemento continúa siendo utilizada y
+    los otros elementos de texto o elementos en línea se posicionan alrededor de él. 
+    La propiedad CSS float: left; se utiliza para alinear un elemento a la izquierda dentro de su contenedor padre. Cuando se aplica a un elemento HTML mediante CSS, permite que el elemento "flote" a la izquierda, lo que permite que otros contenidos se envuelvan
+    alrededor de él. Esta propiedad se utiliza comúnmente para crear diseños de varias columnas, donde los elementos se flotan a la izquierda o a la derecha para crear una estructura de cuadrícula.*/
+    
+    margin: 0 20px 20px 0; /* superior, derecha, abajo y izquierda es el orden de los parametros */
+}
+
+.mapa{
+    padding: 3em 0; 
+    /* 3 veces a la referencia del tipo de fuente para arriba y abajo y para los
+    laterales 0 esto se le aplica a toda la seccion del mapa */
+
+    /*background: linear-gradient(90deg, orange 50%, blue, red, black);*/  
+    /* Esta funcion recibe como parametros los colores para aplicar el degradado y los reparte 
+    equitativamente en el espacio asignado y si definimos como primer parametro un angulo nos
+    permite hacer el degradado de colores en terminos de los grados, se puede configural el espacio
+    colocando al lado el porcentaje del espacio a tomar y los demas colores toman el espacio restante */  
+    /*background: radial-gradient( orange 50%, blue, red, black);*/   
+    /* ahora si lo quiero en formato circula utilizo la funcion radial-gradient */
+    background: linear-gradient(#FEFEFE, #888888);
+    /* Aqui le estamos diciendo que el degradado valla desde ese color blanco(FEFEFE) hasta el color plomo(888888) */
+    /* Lo aplicamos aqui para que toda la seccion del mapa se vea afectada por los estilos */
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center; 
+    /* Alignacion del texto para el centro */
+}
+
+.mapa-contenido{
+    width: 940px; /* que me ocupe 940px de la pagina y que el resto lo convierta en margen */
+    margin: 0 auto;
+}
+
+.diferenciales{
+    padding: 3em 0;
+    background: #888888;
+
+    /*box-shadow: inset 0 0 30px red;*/    
+    /*Con box-shadow y la propiedad inset como primer parametro se crea una sombra interna, los demas parametros se siguen poniendo despues del inside, donde se
+    utilizaria el mismo orden pero que en un box-shadow normal pero sin inset como primer parametro */
+}
+
+.contenido-diferenciales{
+    width: 640px;   /* Espacio que ocupa en el bloque respectivo que tiene en este caso ocupa 640px
+    y el restante lo deja de margen con el auto a los laterales*/
+    /* Ahora ya tiene el centralizado correcto, ya que quitamos lo del main para 
+    que no se viera afectado */
+    margin: 0 auto;
+    /* Esto del margin ayuda a centralizar el contenido, ya que aplica un auto a los laterales de lo sobrante */
+
+}
+
+.lista-diferenciales{
+    width: 40%;
+    /* Aqui estamos definiendo que la lista va a ocupar el 40% del ancho y el restante osea el 60% 
+    para la imagen, cabe recalcar que el ancho que va a utilizar ya lo definimos y es de 640px */
+    
+    display: inline-block;
+    vertical-align: top; 
+    /* Esta propiedad se la damos para que se alinie con un elemento en comun en
+    este caso es alignacion vertical hacia el borde de arriba de la imagen */
+
+}
+
+/* En este caso este selector de clase hace referencia a los li del bloque de diferenciales */
+.items{
+    line-height: 1.5;
+    /* line-height significa linea de altura;
+    Aqui con esta propiedad le damos mas espacio, como parametro le estamos pasando 1.5 y esto 
+    hace referencia a 1.5 veces el tamano de la letra, que seria un espacio del 50% del tamano de nuestra fuente predeterminada
+    predeterminada en el navegador, va muy referenciado al em */
+}
+
+.items:before{
+    /* un pseudo-elemento usando CSS que anteceda a un elemento de HTML ese seria la propiedad :before.
+    Cuando queremos crear un elemento en la pagina, via CSS, antes del elemento de HTML, usamos la propiedad :before */
+    /* con esta propiedad le estamos diciendo que ponga un elemento antes de los items de la lista, en este
+    caso pondra esto ★ al inicio de cada items  */
+    content: "★";
+}
+.items:first-child{ 
+    /* Esto es una pseudo-clase y aqui hacemos referencia al primer hijo de esta clase que esta 
+    conformada por varios li, para referenciarnos al ultimo elemento seria last-child y para
+    referenciarnos a la posicion de la etiqueta li con la propiedad nth-child(numero del hijo como parametro)
+    hay que tener en cuenta que va en orden creciente y si le pasamos como parametro 2n solo va a elegir
+    los numeros pares   */
+    font-weight: bold;
+
+}
+
+.imagen-diferenciales{
+    width: 60%; 
+    /* Aqui le estamos especificando la anchura de la imagen en este caso seria el 60% */
+
+    transition: 400ms;
+    /* Con esto le decimos que haga la trasicion en 400 milisegundos para que se torne mas suave
+    la trasicion y no sea tan ruda como es por defecto */
+    
+    box-shadow: 10px 10px 30px 15px #000000; 
+    /* Pagina recomendada para probar o practicar diferentes configuraciones: 
+    box shadow generator css mozilla */
+    /* box-shadow: 10px 10px 30px 15px #000000, -10px -10px yellow, -15px 10px rgba(50, 50, 50, 0.5); */    /* Esta propiedad se trabaja con tres parametros la posicion de la sombra en horizontal, la posicion de la sombra
+    en vertical y por ultimo el color de la sombra, pero tambien se puede agregar un cuarto parametro
+    que va despues de la posicion de la sombra en vertical que seria la difuminicidad(osea en que proporcion va de solido
+    a trasparente mas o menos como el degradado, en pocas palabras va de solido a transparente en nuestra sombra la difuminacion) de la sombra, tambien
+    hay un quinto parametro llamado spread(expansion) que va despues de la difuminacion que sirve 
+    para que configuremos hasta donde queremos que esa sombra llegue,aqui por ejemplo con los parametros que le hemos
+    pasado(10px 10px #000000) estamos creando una sombra abajo porque le estamos pasando positivo el parametro
+    y a la derecha porque tambien le estamos pasando positivo el parametro, siendo haci se invertirian la posicion hacia arriba
+    si pusieramos en negativo el parametro y tambia hacia la izquierda si tambien lo pusieramos en negativo, cabe recalcar que
+    esto funciona respecto al sentido horario, incluso podemos colocar mas sombras tantas como nosotros queramos eso se haria colocando una coma y definiendo los parametros nuevos de la sombra, tambien
+    como tercer parametro le podemos pasar la funcion rgba para que coloque un color opaco*/
+    
+}
+
+.imagen-diferenciales:hover{
+    opacity: 0.3; 
+    /* 0.3 = 30% */
+    /* con opacity definimos la opacidad de esta imagen aunque cabe recalcar que se puede aplicar a Todos 
+    los elementos y todos los colores donde pueden tener una capa de 
+    opacidad y el nivel de opacidad se define despues de escribir la 
+    propiedad(opacity: 0%) donde el 0% de opacidad no deja pasar nada de luz entonces no 
+    se ve nada y el 100% hace lo contrario osea deja pasar toda la luz y se ve normal la imagen */
+    /* Opacidad = es un objeto que no deja pasar de todo la luz, por ejemplo la ventanas opacas que no dejan
+    casi pasar la luz, otro ejemplo seria las peliculas de los parabrisas que segun su porcentaje de opacidad
+    deja pasar cierto porcentaje de luz hay alguna muy opacas que no dejan pasar nada del luz significa que 
+    tiene un nivel de opacidad bastante alto*/
+    /* Cabe recalcar que la opacidad puede ser aplicada tanto en elemetos con la propiedad opacity, y tanto tambien a
+    los colores con la funcion rgba() */
+}
+
+.video{
+    width: 560px; 
+    /* Tenga la misma anchura que nuestro video, que seria 560px, ahora gracias eso el video 
+    mide justamente lo que mide el video, eso permite que la etiqueta margen con el auto haga los 
+    ajustes a los lacterales de manera correcta*/
+
+    margin: 1em auto;
+    /* Vamos a centralizarlo a travez del margen y como propiedad el auto para que haga los 
+    ajustes a los lacterales de manera correcta y quede centralizado */
+}
+
+@media screen and (max-width: 480px){
+    
+    
+    /* Para que sea responsiva creamos esta etiqueta */
+    /* Dentro de esta media query(que es una excepcion)podemos crear un estilo visual que incluye pantallas de hasta 480px */
+    /* Las medias query nos permite trabajar con excepciones para que cuando se da una 
+    excepcion aplique algo diferente, en este caso aplicara lo que esta dentro de este bloque  */
+    /* si encuentra una pantalla(por eso ponemos screen) Y que tenga como maximo 480px(max-width)(la mayoria son celulares)le aplica lo de este bloque */    
+    /* Podria crear varias de estas media query para adaptarlo a varios tipos de pantallas */
+   
+    h1{
+        text-align: center;
+        /* Esto es para centralizar nuestro logo y darle mejor visibilidad */
+    
+    }
+    
+    nav{
+        position: static;
+        /* ---------------------------------------- */
+        /* Si lo volvemos static tendremos nuestro panel de navegacion ubicado correctamente */
+    }
+    
+    .caja, .principal, .mapa-contenido, .contenido-diferenciales, .video{
+        /* hay que tener en cuenta que la clase video igualmente no va a cambiar aunque le demos esta propiedad
+        y esto se debe a que en el iframe del video esta definiendo tambien el ancho y en este caso sobrepasa la pantalla 
+        del dispositivo movil(iphone x)*/
+        /* elegimos estas clases porque el widht que tienen por defecto gracia a la configuracion
+        que le habiamos dado da errores(igualmente esto se ve con el inpesctor de elementos y el modo celular
+        y se ve como se sobresalen los elemento de la pantalla del celular, ya que nuestros
+        elementos miden mucho mas que la pantalla del dispositivo ) por eso cambiamos al widht:auto */
+        width: auto; 
+        /* Con este auto en el widht la pantalla se ancha respecto al dispositivo movil, por ejemplo
+        en el caso del iphone x este tiene un ancho de 375 y este se ancha automaticamente a la pantalla
+        del dispositivo movil(cambia su widht a igual 375 en este caso) gracias al width: auto */
+    }
+    /* Lo bueno es que organizamos nuestro codigo por bloques esto nos facilita el estalizado de ella */
+    /* en estos selectores de bloques cambiamos el width a auto esto es porque anteriormete esto bloques tenian un
+    valor absoluto en el widht por ejemplo en la caja tenia un valor de 940px y lo cambiamos a auto, tambien
+    tenemos a otros elementos que tienen este comportamiento por eso es necesario cambiarlo
+    esto es bueno porque no necesitamos que tenga un ancho definido si no un ancho automatico en caso sea la excepcion que impusimos
+    */
+
+    .lista-diferenciales, .imagen-diferenciales{
+        width: 100%;
+        /* la imagen ocupa el 60% del ancho de la pantalla pero 
+        de un computador tambien la listas ocupa el 40% del ancho de la pagina de un 
+        computador, asi ocupando el 100% del ancho, pero esto en celular se veia muy pequeno entonces
+        lo mejor era poner uno encima(en este caso la imagen se pondra abajo y la lista arriba de ella)
+        del otro para eso utilizamos el widht al 100% para que los
+        dos elementos ocupen el 100% de ancho de la pantalla del movil y se ubiquen los elementos uno
+        encima del otro  */
+    }
+}
+
+
+
+
+
+/*
+ Orden jerarquico: inline = 1000, id = 100 peso, class = 10 peso, etiqueta = 1 peso
+form p{ Aqui son dos etiquetas por eso le da mayor peso que en este caso seria (form p = 1 + 1 = 2) en cambio p sola equivale a 1 (p = 1)
+    color: blue;
+}
+
+p{
+    color: red;
+}
+
+ En este caso prioriza mas la clase porque esta pesa 10 
+.test{
+    color: yellow;
+}
+
+
+ En este caso prioriza mas esto porque este pesa p.test = 10 + 1 = 11 
+p.test{  Selector de una etiqueta mas la clase 
+    color: orange;
+}
+
+ Le da mas prioriza al id ya que este pesa mas 
+#test{
+    color: pink;
+}
+
+ Pero a lo ultimo el inline(escribirlo en la misma linea de la etiqueta) es el que mas pesa 
+*/
